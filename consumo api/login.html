@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<title>Prueba api</title>
+</head>
+<body>
+	<div class="base">
+		
+		<div id="interfazLogin" class="mb-4">
+				<div  class="title">
+					<marquee direction="right" behavior="alternate"><h1> Login </h1></marquee>
+				</div>
+
+				<div class="mb-4">
+					<label>Api rest</label>
+					<input id="api" type="email" class="form-control" autocomplete="off" placeholder="http://localhost:8080" value="http://localhost:8080">
+				</div>
+
+				<div class="mb-4">
+					<label>Email</label>
+					<input id="email" type="email" class="form-control" autocomplete="off" placeholder="Escirbe email">
+				</div>
+
+				<div class="mb-4">
+					<label>Contraseña</label>
+					<input id="pasw" type="password" class="form-control" placeholder="Escribe contraseña">
+				</div>
+
+				<div class="mb-4">
+					<button id="btnLogin" class="btn btn-primary">
+						Iniciar sesión
+					</button>
+				</div>
+
+				<div class="mb-4">
+					<h3>Datos para pruebas</h3>
+					<p>
+						Usuario administrador: admin@admin.com <br>
+						Contraseña: prueba2021
+					</p>
+				</div>
+
+				<div class="mb-4">
+					<a href="readme.html">Leer documentación</a>
+				</div>
+
+				<div class="mb-4">
+					<p id="warnText"></p>
+				</div>
+		</div>
+
+	</div>
+
+	<script src="login.js"></script>
+</body>
+</html>

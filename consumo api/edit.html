@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<title>Editar</title>
+</head>
+<body>
+	<div class="base baseInicio" id="interfazInicio">
+
+		<div>
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			  <div class="container-fluid">
+			    <div class="collapse navbar-collapse" id="navbarNav">
+			      <ul class="navbar-nav" id="nav">
+			      	<script>
+			      		if(localStorage.getItem('rol') == 'Administrator')
+			      		{
+			      			const nav = document.getElementById('nav')
+			      			const li = document.createElement('li')
+			      			const a = document.createElement('a')
+
+			      			a.setAttribute('href','crear.html')
+			      			a.setAttribute('class','nav-link active')
+			      			li.setAttribute('class','nav-item')
+			      			li.appendChild(a).textContent = '👦Agregar usuario'
+			      			nav.appendChild(li)
+			      			// <li class="nav-item"><a href="crear.html" class="nav-link active">👦Agregar usuario</a></li>
+			      		}
+			      	</script>
+			      	<li class="nav-item"><a href="inicio.html" class="nav-link active">👈Ir atrás</a></li>
+			      	<li class="nav-item"><a href="#" id="apiLogout" class="nav-link active">🚪Salir</a></li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+			<br/>
+
+			<div class="mb-3">
+				  <label for="exampleFormControlInput1" class="form-label">Rol </label>
+				  <select class="form-select" id="rol_id">
+					  <option selected>Seleccione Rol</option>
+					  <!-- <option value="1">Administrator</option> -->
+					  <option value="2">Operator</option>
+				  </select>
+			</div>
+
+			<div class="mb-3">
+			  <label for="exampleFormControlInput1" class="form-label">Nombres </label>
+			  <input type="text" class="form-control" id="name" placeholder="Pepito Perez">
+			</div>
+
+			<div class="mb-3">
+			  <label for="exampleFormControlInput1" class="form-label">Identificación</label>
+			  <input type="text" class="form-control" id="identification" placeholder="123456">
+			</div>
+
+			<div class="mb-3">
+			  <label for="exampleFormControlInput1" class="form-label">Email</label>
+			  <input type="email" class="form-control" id="email" placeholder="perez@hotmail.com">
+			</div>
+
+			<div class="mb-3">
+			  <label for="exampleFormControlInput1" class="form-label">Celular</label>
+			  <input type="email" class="form-control" id="cellphone" placeholder="3058154463">
+			</div>
+
+			<div class="warnings">
+				<p id="warnText"></p>
+			</div>
+
+			<div class="mb-3" id="buttons">
+			  <input type="button" value="Editar" id="btn" class="btn btn-success">
+			  
+			  <script>
+			  	if(localStorage.getItem('rol') == 'Administrator')
+	      		{
+	      			const input = document.createElement('input')
+	      			const buttons = document.getElementById('buttons')
+	      			const selectRol = document.getElementById('rol_id')
+
+	      			input.setAttribute('type','button')
+	      			input.setAttribute('id','delete')
+	      			input.setAttribute('class','btn btn-danger')
+	      			input.setAttribute('value','Eliminar')
+	      			buttons.appendChild(input)
+
+	      			const option = document.createElement('option')
+	      			option.setAttribute('value','1')
+	      			option.textContent = 'Administrator'
+	      			selectRol.appendChild(option)
+	      		}
+			  </script>
+			  <!-- <input type="button" value="Eliminar" id="delete" class="btn btn-danger"> -->
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<script src="edit.js"></script>
+</body>
+</html>
